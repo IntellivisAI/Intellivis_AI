@@ -5,24 +5,26 @@
   import chatwithdbImage from '../img/chat.png';
   import chatbotImage from '../img/chatbot.jpg';
 
-  interface Project {
-    title: string;
-    description: string;
-    tags: string[];
-    stars: string;
-    isOpenSource: boolean;
-    image?: string; // Make image property optional
-  }
+ interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  stars: string;
+  isOpenSource: boolean;
+  image?: string; // Make image property optional
+  sourceUrl?: string; // Add optional source URL
+}
 
   const Projects = () => {
     const projects: Project[] = [
       {
-        title: 'InsightIQ (Text Summarizer & Keyword Extractor)',
-        description: 'Placeholder description for InsightIQ.',
-        tags: ['AI/ML', 'NLP'],
-        stars: '-',
-        isOpenSource: true,
-        image: insightqImage,
+       title: 'InsightIQ (Text Summarizer & Keyword Extractor)',
+       description: 'Placeholder description for InsightIQ.',
+       tags: ['AI/ML', 'NLP'],
+       stars: '-',
+       isOpenSource: true,
+       image: insightqImage,
+       sourceUrl: 'https://github.com/IntellivisAI/InsightIQ',
       },
       {
         title: 'Chatbot Application for Business Analysis',
