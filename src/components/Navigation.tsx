@@ -1,123 +1,21 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Brain } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+import BrandMark from './BrandMark';
+
+const items = [{href:'#services',label:'Expertise'},{href:'#process',label:'Approach'},{href:'#projects',label:'Work'},{href:'#about',label:'Studio'}];
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  };
-
-  const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact Me' },
-  ];
-
-  return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 shadow-sm' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Brain size={24} className="text-blue-600 dark:text-blue-400" />
-            <span className="text-2xl font-bold text-slate-900 dark:text-white">Intellivis.AI</span>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Right Side - Dark Mode Toggle */}
-          <div className="hidden md:flex items-center">
-            <button 
-              onClick={toggleDarkMode}
-              className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-slate-700 dark:text-slate-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-lg">
-            <div className="flex flex-col space-y-4 pt-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <button 
-                onClick={toggleDarkMode}
-                className="flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-left"
-              >
-                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
+  const [open,setOpen] = useState(false);
+  const [scrolled,setScrolled] = useState(false);
+  useEffect(()=>{const fn=()=>setScrolled(window.scrollY>24);fn();window.addEventListener('scroll',fn,{passive:true});return()=>window.removeEventListener('scroll',fn)},[]);
+  return <nav aria-label="Main navigation" className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <div className={`mx-auto flex h-16 max-w-[1380px] items-center justify-between rounded-2xl px-4 transition-all duration-500 sm:px-5 ${scrolled?'border border-white/10 bg-[#07101e]/80 shadow-2xl shadow-black/20 backdrop-blur-xl':'border border-transparent'}`}>
+      <a href="#home" aria-label="Intellivis home" className="flex items-center gap-2.5"><BrandMark className="h-9 w-9"/><span className="text-[17px] font-semibold tracking-[-.03em] text-white">Intellivis<span className="text-cyan-300">.AI</span></span></a>
+      <div className="hidden items-center gap-1 rounded-full border border-white/[.07] bg-white/[.03] p-1 md:flex">{items.map(item=><a key={item.href} href={item.href} className="rounded-full px-4 py-2 text-xs font-medium text-slate-400 transition hover:bg-white/[.06] hover:text-white">{item.label}</a>)}</div>
+      <a href="#contact" className="hidden items-center gap-2 text-sm font-medium text-white transition hover:text-cyan-200 md:flex">Let's talk <ArrowUpRight size={16}/></a>
+      <button aria-label="Toggle menu" aria-expanded={open} onClick={()=>setOpen(!open)} className="text-white md:hidden">{open?<X/>:<Menu/>}</button>
+    </div>
+    {open&&<div className="mx-auto mt-2 max-w-[1380px] rounded-2xl border border-white/10 bg-[#07101e]/95 p-5 shadow-2xl backdrop-blur-xl md:hidden">{items.map(item=><a key={item.href} href={item.href} onClick={()=>setOpen(false)} className="block border-b border-white/[.06] py-4 text-slate-200">{item.label}</a>)}<a href="#contact" onClick={()=>setOpen(false)} className="button-primary mt-5 w-full">Start a conversation <ArrowUpRight size={16}/></a></div>}
+  </nav>
 };
-
 export default Navigation;

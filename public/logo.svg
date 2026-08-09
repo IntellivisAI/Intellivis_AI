@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Intellivis.AI neural network logo</title>
+  <desc id="desc">A neural network with connected input, hidden, and output nodes.</desc>
+  <defs><linearGradient id="g" x1="70" y1="54" x2="444" y2="458" gradientUnits="userSpaceOnUse"><stop stop-color="#cffafe"/><stop offset=".52" stop-color="#67e8f9"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+  <rect x="10" y="10" width="492" height="492" rx="148" fill="url(#g)"/>
+  <g fill="none" stroke="#07101e" stroke-width="22" stroke-linecap="round" opacity=".92">
+    <path d="M111 166 212 203m-101-37 101 143M111 346l101-143M111 346l101-37M212 203l96-58M212 203l96 112M212 309l96-164M212 309l96 6m0-170 86 111m-86 59 86-59"/>
+  </g>
+  <g fill="#07101e">
+    <circle cx="111" cy="166" r="29"/><circle cx="111" cy="346" r="29"/>
+    <circle cx="212" cy="203" r="33"/><circle cx="212" cy="309" r="33"/>
+    <circle cx="308" cy="145" r="29"/><circle cx="308" cy="315" r="29"/>
+    <circle cx="394" cy="256" r="38"/>
+  </g>
+  <circle cx="394" cy="256" r="12" fill="#cffafe"/>
+</svg>

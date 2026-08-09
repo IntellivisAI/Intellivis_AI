@@ -1,54 +1,14 @@
-import { Brain, Github, MessageSquare, Twitter } from 'lucide-react';
+import { Github } from 'lucide-react';
+import BrandMark from './BrandMark';
 
-const Footer = () => {
-  return (
-    <footer className="py-12 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-          <div className="flex items-center gap-2">
-            <Brain size={24} className="text-blue-600 dark:text-blue-400" />
-            <span className="text-2xl font-bold text-slate-900 dark:text-white">Intellivis.AI</span>
-          </div>
-            <p className="text-muted-foreground">
-              Building the future of AI-powered development tools and fostering 
-              an open-source community that empowers developers worldwide.
-            </p>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="#home" className="block text-muted-foreground hover:text-primary transition-colors">Home</a>
-              <a href="#about" className="block text-muted-foreground hover:text-primary transition-colors">About</a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-colors">What We Build</a>
-              <a href="#projects" className="block text-muted-foreground hover:text-primary transition-colors">Projects</a>
-              <a href="#contact" className="block text-muted-foreground hover:text-primary transition-colors">Contact</a>
-            </div>
-          </div>
-          
-          <div>
-            <h4 className="font-semibold mb-4">Community</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                <MessageSquare size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
-          <p>&copy; 2024 Intellivis.AI. All rights reserved. Open source, open minds.</p>
-        </div>
-      </div>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="border-t border-white/10 py-10">
+    <div className="container mx-auto flex flex-col gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
+      <div><div className="flex items-center gap-3"><BrandMark className="h-9 w-9"/><p className="text-lg font-semibold text-white">Intellivis<span className="text-cyan-300">.AI</span></p></div><p className="mt-2 text-sm text-slate-500">Human-guided agents. Autonomy earned.</p></div>
+      <div className="flex items-center gap-6 text-sm text-slate-400"><a href="#services" className="hover:text-white">Capabilities</a><a href="#projects" className="hover:text-white">Lab</a><a href="https://github.com/IntellivisAI" target="_blank" rel="noreferrer" aria-label="Intellivis on GitHub" className="hover:text-white"><Github size={19}/></a></div>
+      <p className="text-sm text-slate-600">© {new Date().getFullYear()} Intellivis.AI</p>
+    </div>
+  </footer>
+);
 
 export default Footer;
