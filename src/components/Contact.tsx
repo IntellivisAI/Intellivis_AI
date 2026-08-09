@@ -42,10 +42,25 @@ const Contact = () => (
             <p className="eyebrow">Start a conversation</p>
             <h2 className="section-title">Bring us the workflow that keeps getting in the way.</h2>
             <p className="section-copy">A short, honest description is enough. We’ll review the problem and tell you whether an AI agent is a sensible fit.</p>
-            <a href={mailto} className="group mt-9 inline-flex h-13 items-center justify-center gap-3 rounded-full bg-cyan-200 px-7 font-semibold text-slate-950 transition hover:bg-white">
-              <Mail size={18}/> Email your requirements <ArrowUpRight size={17} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"/>
-            </a>
-            <a href="https://www.instagram.com/tech_mutant/" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-cyan-200"><Instagram size={15}/>Also available on Instagram · @tech_mutant</a>
+            <div className="mt-9 flex flex-col items-start gap-3">
+              <a href={mailto} className="group inline-flex h-13 items-center justify-center gap-3 rounded-full bg-cyan-200 px-7 font-semibold text-slate-950 transition hover:bg-white">
+                <Mail size={18}/> Email your requirements <ArrowUpRight size={17} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"/>
+              </a>
+              <a
+                href="https://www.instagram.com/tech_mutant/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Follow Intellivis AI on Instagram at tech_mutant"
+                className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.035] py-2 pl-2 pr-4 text-sm text-slate-300 transition hover:border-pink-400/25 hover:bg-white/[0.06] hover:text-white"
+              >
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-fuchsia-500/20 to-orange-400/20 text-pink-300">
+                  <Instagram size={15}/>
+                </span>
+                <span className="text-slate-400 transition group-hover:text-slate-300">Instagram</span>
+                <span className="font-medium text-white">@tech_mutant</span>
+                <ArrowUpRight size={15} className="text-slate-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-pink-300"/>
+              </a>
+            </div>
           </div>
 
           <div className="rounded-3xl border border-white/[.09] bg-[#07101e]/65 p-6 backdrop-blur sm:p-8">
