@@ -3,7 +3,8 @@
 ## Before publishing
 
 - Connect the production deployment to `https://intellivis.ai`.
-- Confirm the Formspree form at `https://formspree.io/f/xanjywno` belongs to the Intellivis account and accepts a real test message.
+- Configure `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, and `SMTP_FROM` in Vercel. For Gmail, use a Google App Password rather than the normal account password.
+- Submit a real contact-form message and confirm it arrives at `vichu110602@gmail.com` with Reply-To set to the visitor's email.
 - Confirm `intellivisailabs@gmail.com` is monitored and has a professional signature.
 - Check every GitHub and social link.
 - Run `npm run build` and `npm run lint`.

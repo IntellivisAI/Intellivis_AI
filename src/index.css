@@ -73,6 +73,12 @@
   .agent-tool .status-dot { @apply ml-auto h-1.5 w-1.5 rounded-full bg-emerald-300; box-shadow:0 0 0 4px rgb(110 231 183 / .06); }
   .tool-one { left:5%; top:16%; }.tool-two { right:5%; top:16%; }.tool-three { bottom:17%; left:5%; }.tool-four { bottom:17%; right:5%; }
   .agent-caption { @apply absolute inset-x-0 bottom-4 flex items-center justify-center gap-2 text-[10px] text-slate-500; }
+  .hero-interactive { --pointer-x: 50%; --pointer-y: 36%; }
+  .neural-backdrop { @apply pointer-events-none absolute inset-0 overflow-hidden; opacity:.48; mask-image:linear-gradient(to bottom, black 0%, black 70%, transparent 100%); }
+  .neural-backdrop > svg { @apply absolute inset-0 h-full w-full; }
+  .neural-links line { stroke:rgb(103 232 249 / .13); stroke-width:.12; stroke-dasharray:1.2 1.8; animation:neural-flow 7s linear infinite; }
+  .neural-nodes circle { fill:rgb(103 232 249 / .42); transform-box:fill-box; transform-origin:center; animation:node-breathe 5s ease-in-out infinite; }
+  .pointer-light { position:absolute; inset:0; background:radial-gradient(360px circle at var(--pointer-x) var(--pointer-y), rgb(103 232 249 / .11), transparent 68%); transition:background .12s linear; }
 }
 
 @layer utilities {
@@ -93,6 +99,8 @@
 @keyframes reveal { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 @keyframes marquee { to { transform:translateX(-50%); } }
 @keyframes dash { to { stroke-dashoffset:-120; } }
+@keyframes neural-flow { to { stroke-dashoffset:-18; } }
+@keyframes node-breathe { 0%,100% { opacity:.28; transform:scale(.8); } 50% { opacity:.85; transform:scale(1.35); } }
 
 @media (max-width: 480px) {
   .agent-tool { min-width: 7.25rem; padding:.55rem; }
@@ -104,4 +112,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  .pointer-light { display:none; }
 }

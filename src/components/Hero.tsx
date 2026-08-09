@@ -1,7 +1,9 @@
 import { ArrowDownRight, ArrowRight, Bot, BrainCircuit, Check, Database, Mail, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import NeuralBackdrop from './NeuralBackdrop';
 
 const Hero = () => (
-  <section id="home" className="relative min-h-screen overflow-hidden pt-28 sm:pt-32 lg:flex lg:items-center lg:pt-24">
+  <section id="home" className="hero-interactive relative min-h-screen overflow-hidden pt-28 sm:pt-32 lg:flex lg:items-center lg:pt-24" onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`); event.currentTarget.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`); }}>
+    <NeuralBackdrop />
     <div className="hero-grid absolute inset-0" />
     <div className="absolute -right-48 top-8 h-[700px] w-[700px] rounded-full bg-cyan-300/[.1] blur-[170px]" />
     <div className="absolute -left-48 bottom-0 h-[500px] w-[500px] rounded-full bg-indigo-500/[.07] blur-[150px]" />
