@@ -23,7 +23,7 @@ Additional context:
 
 Thank you.`);
 
-const mailto = `mailto:vichu110602@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+const mailto = `mailto:intellivisailabs@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
 const requirements = [
   'The workflow or repetitive task you want to improve',
