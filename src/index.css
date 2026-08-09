@@ -55,9 +55,6 @@
   .lab-node > small { @apply mt-1 text-[9px] uppercase tracking-[.14em] text-slate-600; }
   .lab-node.active { @apply border-cyan-300/20 bg-cyan-300/[.045]; }
   .lab-node.active > svg { @apply text-cyan-300; }
-  .hero-proof { @apply flex flex-col gap-1 bg-[#091523] px-6 py-5 text-center sm:text-left; }
-  .hero-proof strong { @apply font-mono text-[9px] font-medium uppercase tracking-[.16em] text-cyan-300; }
-  .hero-proof span { @apply text-sm text-slate-300; }
   .method-card { @apply relative overflow-hidden rounded-3xl border border-white/[.08] bg-[#091523]/80 p-7 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/20 sm:p-8; }
   .agent-visual { @apply relative aspect-[1.07/1] overflow-hidden rounded-[2rem] border border-white/[.1] bg-[#091523]/85 shadow-[0_50px_130px_-45px_rgba(34,211,238,.28)] backdrop-blur-xl; }
   .agent-grid { @apply absolute inset-0 opacity-50; background-image: radial-gradient(circle, rgb(148 163 184 / .18) 1px, transparent 1px); background-size: 24px 24px; mask-image: radial-gradient(circle at center, black, transparent 72%); }

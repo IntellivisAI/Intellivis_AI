@@ -52,11 +52,6 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/[.07] bg-white/[.07] sm:grid-cols-3 lg:mt-20">
-        <div className="hero-proof"><strong>01 · Crawl</strong><span>Observe, learn, and assist the team</span></div>
-        <div className="hero-proof"><strong>02 · Walk</strong><span>Handle bounded tasks with approval</span></div>
-        <div className="hero-proof"><strong>03 · Autonomous</strong><span>Act within proven rules and guardrails</span></div>
-      </div>
     </div>
   </section>
 );
