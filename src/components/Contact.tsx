@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Clock3, Mail, MessageSquareText } from 'lucide-react';
+import { ArrowUpRight, Check, Clock3, Instagram, Mail, MessageSquareText } from 'lucide-react';
 
 const emailSubject = encodeURIComponent('AI agent project enquiry — Intellivis.AI');
 const emailBody = encodeURIComponent(`Hi Intellivis,
@@ -45,7 +45,7 @@ const Contact = () => (
             <a href={mailto} className="group mt-9 inline-flex h-13 items-center justify-center gap-3 rounded-full bg-cyan-200 px-7 font-semibold text-slate-950 transition hover:bg-white">
               <Mail size={18}/> Email your requirements <ArrowUpRight size={17} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"/>
             </a>
-            <a href="mailto:vichu110602@gmail.com" className="mt-5 block text-sm text-slate-400 transition hover:text-cyan-200">vichu110602@gmail.com</a>
+            <a href="https://www.instagram.com/tech_mutant/" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-cyan-200"><Instagram size={15}/>Also available on Instagram · @tech_mutant</a>
           </div>
 
           <div className="rounded-3xl border border-white/[.09] bg-[#07101e]/65 p-6 backdrop-blur sm:p-8">
